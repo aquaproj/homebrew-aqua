@@ -6,21 +6,21 @@ class Aqua < Formula
   desc "Declarative CLI Version manager. Support Lazy Install and Sharable configuration mechanism named Registry. Switch versions seamlessly
 "
   homepage "https://github.com/aquaproj/aqua"
-  version "1.19.0"
+  version "1.19.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.19.0/aqua_darwin_amd64.tar.gz"
-      sha256 "4eaae998af263da257bb230d8cf073275d278b861f0ab0cd4931ade021a0aa2a"
+    if Hardware::CPU.arm?
+      url "https://github.com/aquaproj/aqua/releases/download/v1.19.1/aqua_darwin_arm64.tar.gz"
+      sha256 "761010213f6a42c357e07f2fd49aa5766117cc76f6922a898343a92d84df0730"
 
       def install
         bin.install "aqua"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.19.0/aqua_darwin_arm64.tar.gz"
-      sha256 "196895aba7c31aac2611c372bfff522d6360d364952b00d96677896321382f71"
+    if Hardware::CPU.intel?
+      url "https://github.com/aquaproj/aqua/releases/download/v1.19.1/aqua_darwin_amd64.tar.gz"
+      sha256 "1e0dc52b97788a637c7e6bdbac11df640188f46b8f6a18cb1bf2bec157239fe2"
 
       def install
         bin.install "aqua"
@@ -30,16 +30,16 @@ class Aqua < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.19.0/aqua_linux_arm64.tar.gz"
-      sha256 "bf3be3bf1973fd7e35662ceb37808a54b52319bc5e4fbf5f29a7b36993295cfd"
+      url "https://github.com/aquaproj/aqua/releases/download/v1.19.1/aqua_linux_arm64.tar.gz"
+      sha256 "be4024aa8b8aaf027134f763adf7f1f1513d0ef0c5f2048371d8880a57270e42"
 
       def install
         bin.install "aqua"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.19.0/aqua_linux_amd64.tar.gz"
-      sha256 "b19b3e2c4161764d88a7d28fb2149c8b6a113c263afb54a2a3c74b320a98f330"
+      url "https://github.com/aquaproj/aqua/releases/download/v1.19.1/aqua_linux_amd64.tar.gz"
+      sha256 "27a6c567b09e749d9b9317b70ca1d56438ec417d64c7c1be5d8a5c004258e6cf"
 
       def install
         bin.install "aqua"
