@@ -6,21 +6,21 @@ class Aqua < Formula
   desc "Declarative CLI Version manager. Support Lazy Install and Sharable configuration mechanism named Registry. Switch versions seamlessly
 "
   homepage "https://github.com/aquaproj/aqua"
-  version "1.20.0"
+  version "1.20.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.20.0/aqua_darwin_arm64.tar.gz"
-      sha256 "79b84134a4eb65bdbba57c7dbb570e87f6c320b00549ac581ca1142963fd4813"
+    if Hardware::CPU.intel?
+      url "https://github.com/aquaproj/aqua/releases/download/v1.20.1/aqua_darwin_amd64.tar.gz"
+      sha256 "09cb8e3b6c554ba2ba15ef3061b282649e27164c27fab995aa8c8d72344cbcaa"
 
       def install
         bin.install "aqua"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.20.0/aqua_darwin_amd64.tar.gz"
-      sha256 "5a782fb42f68dc390f3da5e5ac6f1edd0aa31abdef8076b0c62632742ffb1dfc"
+    if Hardware::CPU.arm?
+      url "https://github.com/aquaproj/aqua/releases/download/v1.20.1/aqua_darwin_arm64.tar.gz"
+      sha256 "cf110a2334e774164e8d38377fa7f53e26be6a0715f3431af512b0bb432fc7d0"
 
       def install
         bin.install "aqua"
@@ -29,17 +29,17 @@ class Aqua < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.20.0/aqua_linux_amd64.tar.gz"
-      sha256 "3a8591e04ba938a2715409cc57c1c7b91d5d63c261221f58008b294866312977"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aquaproj/aqua/releases/download/v1.20.1/aqua_linux_arm64.tar.gz"
+      sha256 "938f87e796a8259320a9403df427025f02a050d91317053c6feb31435d4c271c"
 
       def install
         bin.install "aqua"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.20.0/aqua_linux_arm64.tar.gz"
-      sha256 "2a53985783f428ae83861bb094e08f1d8eaa3cc4aec3146e9cb4302ad2e2d750"
+    if Hardware::CPU.intel?
+      url "https://github.com/aquaproj/aqua/releases/download/v1.20.1/aqua_linux_amd64.tar.gz"
+      sha256 "6012b2ecdb97f1057ea5e9fc09eac93187cca2e6df2a15258fa1e68f67796e89"
 
       def install
         bin.install "aqua"
