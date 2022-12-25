@@ -6,21 +6,21 @@ class Aqua < Formula
   desc "Declarative CLI Version manager. Support Lazy Install and Sharable configuration mechanism named Registry. Switch versions seamlessly
 "
   homepage "https://github.com/aquaproj/aqua"
-  version "1.25.0"
+  version "1.25.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.25.0/aqua_darwin_amd64.tar.gz"
-      sha256 "3999b85577d4d5c0bdb49b7d63ebe0d5db12ae40481bd7bb4b0fa49ddd900d23"
+      url "https://github.com/aquaproj/aqua/releases/download/v1.25.2/aqua_darwin_amd64.tar.gz"
+      sha256 "c65efeb03088e92c70e3edf40ff27ddb9cc2ab307710e4720cd50dcccf427160"
 
       def install
         bin.install "aqua"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.25.0/aqua_darwin_arm64.tar.gz"
-      sha256 "fbaddc0836c9774b297f9f2c21e8c738544c9ce3ae0159f2d1d9c7ac9679499a"
+      url "https://github.com/aquaproj/aqua/releases/download/v1.25.2/aqua_darwin_arm64.tar.gz"
+      sha256 "68a9b38658e61b59e2cdc791575c5ea84a9c408ff4f7430925fcb756d7fab2cf"
 
       def install
         bin.install "aqua"
@@ -30,16 +30,16 @@ class Aqua < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.25.0/aqua_linux_arm64.tar.gz"
-      sha256 "d05ccef4812463e498979b24f9778835d87c27bd3820a0f185d9fc0020dd8cf4"
+      url "https://github.com/aquaproj/aqua/releases/download/v1.25.2/aqua_linux_arm64.tar.gz"
+      sha256 "ee7160f614cf023bf85bf63a1dd3dc1fa48220fec239d330ef5330bffd522861"
 
       def install
         bin.install "aqua"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v1.25.0/aqua_linux_amd64.tar.gz"
-      sha256 "c4980dfa156813a980892dc6a7ff8a14801a0b326333cd575cf11ff1854b3961"
+      url "https://github.com/aquaproj/aqua/releases/download/v1.25.2/aqua_linux_amd64.tar.gz"
+      sha256 "7537b159dbd92db925a3a9ea583c85f83f444881272ad4bcaf5a1099459909c5"
 
       def install
         bin.install "aqua"
