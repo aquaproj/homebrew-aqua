@@ -10,17 +10,17 @@ class Aqua < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/aquaproj/aqua/releases/download/v2.16.2/aqua_darwin_arm64.tar.gz"
-      sha256 "6468c3d706c1d8b570643073e26477df7724f245581e2126fbb8a8fa169123f9"
+    if Hardware::CPU.intel?
+      url "https://github.com/aquaproj/aqua/releases/download/v2.16.2/aqua_darwin_amd64.tar.gz"
+      sha256 "6664c7dc5d00be9af6f40da21cb957ba50add628e72fddf849ae9b6a825c4b67"
 
       def install
         bin.install "aqua"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v2.16.2/aqua_darwin_amd64.tar.gz"
-      sha256 "6b73244917a05c89a3c046504606aab0aa67df6483b0242948cff6b80f415bc2"
+    if Hardware::CPU.arm?
+      url "https://github.com/aquaproj/aqua/releases/download/v2.16.2/aqua_darwin_arm64.tar.gz"
+      sha256 "eee5b1155fd664ed12d2995c0fda24e1b353449b6c7027fceb19620b8752eaad"
 
       def install
         bin.install "aqua"
@@ -31,7 +31,7 @@ class Aqua < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/aquaproj/aqua/releases/download/v2.16.2/aqua_linux_arm64.tar.gz"
-      sha256 "65dc53512bae8bc39b3e3553b83090a46e28b2330ffea604ee0e22176d6d87f1"
+      sha256 "5cdee70b8be2cf30f68c88ed0bc8b3ec91d645ab5ee66a1a4059d17d9620a0ca"
 
       def install
         bin.install "aqua"
@@ -39,7 +39,7 @@ class Aqua < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/aquaproj/aqua/releases/download/v2.16.2/aqua_linux_amd64.tar.gz"
-      sha256 "922221105dded42bcf01fc823e931baf7a9776dda88f0eb1c857559c6c84a1e3"
+      sha256 "382837acc27069c40d407d65ef99ed2a68ebf157f6906fccce7a1062e14340a9"
 
       def install
         bin.install "aqua"
