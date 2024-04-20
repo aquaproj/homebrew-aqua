@@ -6,43 +6,47 @@ class Aqua < Formula
   desc "Declarative CLI Version manager. Support Lazy Install and Sharable configuration mechanism named Registry. Switch versions seamlessly
 "
   homepage "https://github.com/aquaproj/aqua"
-  version "2.27.0"
+  version "2.27.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v2.27.0/aqua_darwin_amd64.tar.gz"
-      sha256 "7bf17b569375a07c559c1367ea458a88b3093f47d918320132ae84569d020079"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.27.1/aqua_darwin_amd64.tar.gz"
+      sha256 "9c53abba5093d8dd89443305390ce192b4d5fa8a388fa130edf635e7f7c80c3f"
 
       def install
         bin.install "aqua"
+        generate_completions_from_executable(bin/"aqua", "completion", shells: [:bash, :zsh])
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/aquaproj/aqua/releases/download/v2.27.0/aqua_darwin_arm64.tar.gz"
-      sha256 "cf451c0ac4aa8b843b3a13b20c434b2e30fc7677e8e28290714c75372fead2ab"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.27.1/aqua_darwin_arm64.tar.gz"
+      sha256 "abce98c363f04133c0507fd7dd1091bc6c4af744dddd83ffab21ad7dd25416e6"
 
       def install
         bin.install "aqua"
+        generate_completions_from_executable(bin/"aqua", "completion", shells: [:bash, :zsh])
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v2.27.0/aqua_linux_amd64.tar.gz"
-      sha256 "9300e10c7169b51d2a7b1891d1eee49b6b67da271f57d31d5c21e7c4e15b80b9"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.27.1/aqua_linux_amd64.tar.gz"
+      sha256 "7d7bdc781e3021535b25a3ab1a781fc88e8c019cd05aa5f034ee725003fff383"
 
       def install
         bin.install "aqua"
+        generate_completions_from_executable(bin/"aqua", "completion", shells: [:bash, :zsh])
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aquaproj/aqua/releases/download/v2.27.0/aqua_linux_arm64.tar.gz"
-      sha256 "1848a82c19c53bc39bdc5cdac6dd2ef9b9d17ada25a820297d12ffdfd66e4750"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.27.1/aqua_linux_arm64.tar.gz"
+      sha256 "e60ab1023deba0d8a7884684e2de49ea25eb41237856a72347aa1791a0709f6d"
 
       def install
         bin.install "aqua"
+        generate_completions_from_executable(bin/"aqua", "completion", shells: [:bash, :zsh])
       end
     end
   end
