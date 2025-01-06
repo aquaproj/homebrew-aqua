@@ -6,13 +6,13 @@ class Aqua < Formula
   desc "Declarative CLI Version manager. Support Lazy Install and Sharable configuration mechanism named Registry. Switch versions seamlessly
 "
   homepage "https://github.com/aquaproj/aqua"
-  version "2.42.0"
+  version "2.42.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/aquaproj/aqua/releases/download/v2.42.0/aqua_darwin_amd64.tar.gz"
-      sha256 "5148180e63c01d5888b64afd2d41fbd6246dbe60f87feceb1ff9d4417d2ba926"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.42.1/aqua_darwin_amd64.tar.gz"
+      sha256 "5bc66b430d15ed176eb88914645bbcdb7dd57599a5ca7909d36406478b8818af"
 
       def install
         bin.install "aqua"
@@ -20,8 +20,8 @@ class Aqua < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/aquaproj/aqua/releases/download/v2.42.0/aqua_darwin_arm64.tar.gz"
-      sha256 "54b9b2f128dd915fd6307043a20ee289c8f9621c3e3ebdb911e4b6e004b435e8"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.42.1/aqua_darwin_arm64.tar.gz"
+      sha256 "a0204bb119c924486c3b86166a0c9f1b0df3d7a5fd425e28e65d472f53e7dba6"
 
       def install
         bin.install "aqua"
@@ -33,8 +33,8 @@ class Aqua < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/aquaproj/aqua/releases/download/v2.42.0/aqua_linux_amd64.tar.gz"
-        sha256 "ab9940fcd7a48b6dc90af21842020f4afedc7d31d97114986b244e63ad4bf930"
+        url "https://github.com/aquaproj/aqua/releases/download/v2.42.1/aqua_linux_amd64.tar.gz"
+        sha256 "debfbefd1eb87d90ec1fc9c11c5fad0c9c1cdb18b3ef7dd1c6e4d3fc8c45d4e6"
 
         def install
           bin.install "aqua"
@@ -44,8 +44,8 @@ class Aqua < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/aquaproj/aqua/releases/download/v2.42.0/aqua_linux_arm64.tar.gz"
-        sha256 "9940286369f5c11e664f6d55ee8a1e630e6e33ab423b7bd10a1282a716f8ea29"
+        url "https://github.com/aquaproj/aqua/releases/download/v2.42.1/aqua_linux_arm64.tar.gz"
+        sha256 "4e44ebbcfaf15fab88333fcc0b5eb8804fa1355dc5cfcee0db7710a0e417f2e7"
 
         def install
           bin.install "aqua"
