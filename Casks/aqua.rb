@@ -3,7 +3,7 @@ cask "aqua" do
   desc "Declarative CLI Version manager. Support Lazy Install and Sharable configuration mechanism named Registry. Switch versions seamlessly
 "
   homepage "https://github.com/aquaproj/aqua"
-  version "2.53.4"
+  version "2.53.5"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,23 +13,29 @@ cask "aqua" do
 
   on_macos do
     on_intel do
-      url "https://github.com/aquaproj/aqua/releases/download/v2.53.4/aqua_darwin_amd64.tar.gz"
-      sha256 "16b1d2020fdf10fcdf302a35963cc2cdc2479a33daa52973b22de5185cf44de8"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.53.5/aqua_darwin_amd64.tar.gz"
+      sha256 "9a6a04c298f15e59ea9f693fe6329ed36e669ca177d1b0aa7c2e7fb859dd6c2a"
     end
     on_arm do
-      url "https://github.com/aquaproj/aqua/releases/download/v2.53.4/aqua_darwin_arm64.tar.gz"
-      sha256 "15ab01f2b6d895527b966340d270997f22fbac7aadba2f8f7f59450684c4ac04"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.53.5/aqua_darwin_arm64.tar.gz"
+      sha256 "c6725fb3e8fdd6c5c5cecdea72f1dd28416cb2dd6395df2352715cb1de1d0c6b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/aquaproj/aqua/releases/download/v2.53.4/aqua_linux_amd64.tar.gz"
-      sha256 "b3683c33173580df21908472546c6cd6b078002538e05e75c121720e899244ae"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.53.5/aqua_linux_amd64.tar.gz"
+      sha256 "40f21dec214421fd836f9663526c24241ed4c07f4e8f2753d824718ee0c4d9ca"
     end
     on_arm do
-      url "https://github.com/aquaproj/aqua/releases/download/v2.53.4/aqua_linux_arm64.tar.gz"
-      sha256 "7387614dba5a2f4cb379a4a7cef50d31047a01c175cde3c9fb9853374c0e0623"
+      url "https://github.com/aquaproj/aqua/releases/download/v2.53.5/aqua_linux_arm64.tar.gz"
+      sha256 "41a648fb3f6e4498dd63ce967bc0cb92acd720b8810652f78bbd66b895c604d7"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/aqua"]
     end
   end
 
