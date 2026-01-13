@@ -4,7 +4,7 @@ cask "aqua" do
   desc "Declarative CLI Version manager. Support Lazy Install and Sharable configuration mechanism named Registry. Switch versions seamlessly
 "
   homepage "https://github.com/aquaproj/aqua"
-  version "2.56.2"
+  version "2.56.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,22 +15,22 @@ cask "aqua" do
   on_macos do
     on_intel do
       url "https://github.com/aquaproj/aqua/releases/download/v#{version}/aqua_darwin_amd64.tar.gz"
-      sha256 "46fb7060a3c94483ff3ea70e48b4bee3793d1d629ccec66050296ea57944af9c"
+      sha256 "dfe3d09aab91de2e48e7db3d442536dcb37ca3a168fea87ac048060b9797bb98"
     end
     on_arm do
       url "https://github.com/aquaproj/aqua/releases/download/v#{version}/aqua_darwin_arm64.tar.gz"
-      sha256 "a93db5795ca73d878c8bae612cb08c67e0130b1c0926c995fd84fdde08ccc1aa"
+      sha256 "5e4d1b623a500e6902515ac8fa40bae8421956a9c59bcd9caaefe7b18a0865c6"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/aquaproj/aqua/releases/download/v#{version}/aqua_linux_amd64.tar.gz"
-      sha256 "6ecff5d9f79ed31d3aeab826a15023dce577806a85b563d71975503418c2b34b"
+      sha256 "2953c77d4a0f99dbcf7a17b8b3a7bf7e6da94a48fd271795c431ce517245bfb8"
     end
     on_arm do
       url "https://github.com/aquaproj/aqua/releases/download/v#{version}/aqua_linux_arm64.tar.gz"
-      sha256 "158c501f3aa5b97b54acfb3c8e8438cabb3f931929da8265c564badcf872e596"
+      sha256 "be4d07bf46357ffaebf83b14550f842b3823382158323d2b2defa104cd3cd452"
     end
   end
 
